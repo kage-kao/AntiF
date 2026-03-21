@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_primary">
+
+    <!-- Glass URL Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_card"
+        android:elevation="8dp">
+
+        <EditText
+            android:id="@+id/etUrl"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_url_bar"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:hint="Search or enter URL"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:imeOptions="actionGo"
+            android:inputType="textUri"
+            android:paddingHorizontal="20dp"
+            android:elevation="2dp" />
+
+        <ImageButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_refresh"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text_muted"
+            android:padding="10dp"
+            android:contentDescription="Refresh" />
+
+        <ImageButton
+            android:id="@+id/btnConsole"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_terminal"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/accent"
+            android:padding="10dp"
+            android:contentDescription="Console" />
+
+        <ImageButton
+            android:id="@+id/btnBrowserMenu"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_more"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text_muted"
+            android:padding="10dp"
+            android:contentDescription="Menu" />
+    </LinearLayout>
+
+    <!-- Tab Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp">
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/tabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical" />
+        </HorizontalScrollView>
+
+        <ImageButton
+            android:id="@+id/btnNewTab"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_add"
+            android:background="@drawable/bg_button"
+            android:tint="@color/accent"
+            android:padding="8dp"
+            android:elevation="4dp"
+            android:contentDescription="New tab" />
+
+        <TextView
+            android:id="@+id/tvTabCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp"
+            android:paddingStart="8dp" />
+    </LinearLayout>
+
+    <!-- Progress -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:progressTint="@color/accent"
+        android:progressBackgroundTint="@color/divider"
+        android:max="100"
+        android:visibility="gone" />
+
+    <!-- WebView -->
+    <FrameLayout
+        android:id="@+id/webViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white" />
+
+    <!-- Status -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal"
+        android:background="@color/bg_card"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tvBlockedCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/accent"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+</LinearLayout>
