@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_primary"
+    android:padding="16dp">
+
+    <!-- Header Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_card"
+        android:padding="20dp"
+        android:elevation="8dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cookies"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnClearAllCookies"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Clear All"
+            android:textColor="@color/error"
+            android:textSize="13sp"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_button"
+            android:paddingHorizontal="18dp"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+    <!-- Add Cookie Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card"
+        android:padding="20dp"
+        android:elevation="8dp"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/etCookieUrl"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_input_focused"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:hint="URL (https://...)"
+            android:textSize="14sp"
+            android:paddingHorizontal="20dp"
+            android:elevation="2dp"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <EditText
+                android:id="@+id/etCookieValue"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input_focused"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:hint="name=value"
+                android:textSize="14sp"
+                android:paddingHorizontal="20dp"
+                android:elevation="2dp" />
+
+            <Button
+                android:id="@+id/btnAddCookie"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:layout_marginStart="12dp"
+                android:text="Set"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_accent"
+                android:paddingHorizontal="28dp"
+                android:elevation="4dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLoadCookies"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Load cookies for URL"
+            android:textColor="@color/accent"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_button"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+    <!-- Info -->
+    <TextView
+        android:id="@+id/tvCookieInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_muted"
+        android:textSize="13sp"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="12dp" />
+
+    <!-- Cookies List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCookies"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false" />
+
+</LinearLayout>
