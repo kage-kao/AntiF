@@ -1,4 +1,4 @@
-# AntiF Browser - Bypass для Emergent.sh
+# AntiF Browser
 
 ## Что делает
 
