@@ -1,4 +1,0 @@
--keep class com.antif.browser.data.** { *; }
--keepclassmembers class * extends androidx.room.RoomDatabase { *; }
--dontwarn okhttp3.**
--dontwarn okio.**
